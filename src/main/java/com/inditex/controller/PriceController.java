@@ -1,6 +1,6 @@
 package com.inditex.controller;
 
-import com.inditex.model.Price;
+import com.inditex.model.dto.PriceResponse;
 import com.inditex.service.PriceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Optional;
 
+/**
+ * Controller class for handling price-related endpoints.
+ */
 @RestController
 @Slf4j
 public class PriceController {
@@ -20,13 +20,21 @@ public class PriceController {
     @Autowired
     private PriceService priceService;
 
+    /**
+     * Retrieves the price for the given date, product, and brand.
+     *
+     * @param date   The date for which the price is requested.
+     * @param product The ID of the product.
+     * @param brand   The name of the brand.
+     * @return A ResponseEntity containing the PriceResponse, with HTTP status OK if successful.
+     */
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Price getPrice(@RequestParam("date") Timestamp date, @RequestParam("product") Integer product, @RequestParam("brand") String brand ) {
+    public ResponseEntity<PriceResponse> getPrice(@RequestParam("date") Timestamp date, @RequestParam("product") Long product,
+                                                  @RequestParam("brand") String brand ) {
 
-        log.info("controller trace: " + "date= " + date + ", product=" + product + ", brand=" + brand);
-
-        return priceService.getPrice(date,product,brand);
+        log.debug("Controller trace: " + "date= " + date + ", product=" + product + ", brand=" + brand);
+        return ResponseEntity.ok().body(priceService.getPrice(date,product,brand));
     }
 
 }

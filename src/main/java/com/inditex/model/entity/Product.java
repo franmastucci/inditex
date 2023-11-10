@@ -1,31 +1,28 @@
-package com.inditex.model;
+package com.inditex.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "BRANDS")
+@Table(name = "PRODUCTS")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Brand {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "BRAND_ID")
-    private int brandId;
+    @Column(name = "PRODUCT_ID")
+    private Long productId;
 
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "COUNTRY")
-    private String country;
-
-    @Column(name = "FOUNDING_YEAR")
-    private Date foundingYear;
+    @Column(name = "DESCRIPTION")
+    private String description;
 
 }
+

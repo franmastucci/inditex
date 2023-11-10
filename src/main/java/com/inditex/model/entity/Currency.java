@@ -1,4 +1,4 @@
-package com.inditex.model;
+package com.inditex.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,22 +7,22 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "PRODUCTS")
+@Table(name = "CURRENCIES")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Currency {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PRODUCT_ID")
-    private int productId;
+    @Column(name = "CURR_ID")
+    private Long currId;
+
+    @Column(name = "CODE")
+    private int code;
 
     @Column(name = "NAME")
     private String name;
-
-    @Column(name = "DESCRIPTION")
-    private String description;
 
 }
 

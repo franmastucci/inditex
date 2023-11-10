@@ -1,4 +1,4 @@
-package com.inditex.model;
+package com.inditex.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class Price {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PRICE_ID")
-    private int priceId;
+    private Long priceId;
 
     @ManyToOne
     @JoinColumn(name = "BRAND_ID", referencedColumnName = "BRAND_ID")

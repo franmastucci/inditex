@@ -1,6 +1,6 @@
 package com.inditex.repository;
 
-import com.inditex.model.Price;
+import com.inditex.model.entity.Price;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,22 +9,20 @@ import java.sql.Timestamp;
 import java.util.Optional;
 
 /**
- * Repositorio JPA para la entidad {@link com.inditex.model.Price}.
+ * JPA repository for the {@link Price} entity.
  */
-
 public interface PriceRepository extends JpaRepository<Price, Integer> {
 
     /**
-     * Busca y devuelve la entidad {@link com.inditex.model.Price} con la prioridad máxima
-     * para una marca, producto y fecha dada.
+     * Searches and returns the {@link Price} entity with the highest priority
+     * for a given brand, product, and date.
      *
-     * @param brandName El nombre de la marca.
-     * @param productId El ID del producto.
-     * @param appDate   La fecha de la aplicación.
-     * @return Una {@link java.util.Optional} que contiene la entidad {@link com.inditex.model.Price} con la prioridad máxima,
-     *         o un contenedor vacío si no se encuentra ninguna entidad que cumpla con los criterios.
+     * @param brandName The name of the brand.
+     * @param productId The ID of the product.
+     * @param appDate   The application date.
+     * @return An {@link Optional} containing the {@link Price} entity with the highest priority,
+     *         or an empty container if no entity is found that meets the criteria.
      */
-
     @Query("SELECT p FROM Price p " +
             "JOIN p.brand b " +
             "WHERE b.name = :brandName " +
@@ -38,7 +36,7 @@ public interface PriceRepository extends JpaRepository<Price, Integer> {
                             "AND p2.endDate >= :appDate)")
     Optional<Price> findMaxPriorityPrice(
             @Param("brandName") String brandName,
-            @Param("productId") int productId,
+            @Param("productId") Long productId,
             @Param("appDate") Timestamp appDate
     );
 
