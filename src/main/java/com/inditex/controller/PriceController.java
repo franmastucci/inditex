@@ -14,6 +14,7 @@ import java.sql.Timestamp;
  * Controller class for handling price-related endpoints.
  */
 @RestController
+@RequestMapping("/prices")
 @Slf4j
 public class PriceController {
 

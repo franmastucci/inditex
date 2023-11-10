@@ -14,7 +14,7 @@ class ErrorHandlingControllerAdvice {
     @ExceptionHandler(PriceNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
-    ErrorResponse onNotFoundException(PriceNotFoundException e){
+    ErrorResponse onPriceNotFoundException(PriceNotFoundException e){
         return  ErrorResponse.builder()
                 .msg(e.getMessage())
                 .code(HttpStatus.NOT_FOUND.value())

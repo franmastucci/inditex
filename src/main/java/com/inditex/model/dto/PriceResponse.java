@@ -10,7 +10,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -34,8 +33,8 @@ public class PriceResponse {
 
     private BigDecimal finalPrice;
 
-    public static PriceResponse priceToPriceResponse(Price price, Timestamp date) {
 
+    public static PriceResponse priceToPriceResponse(Price price, Timestamp date) {
         return PriceResponse.builder()
                 .brandId(price.getBrand().getBrandId())
                 .brandName(price.getBrand().getName())
@@ -45,7 +44,6 @@ public class PriceResponse {
                 .appDate(date)
                 .finalPrice(price.getPriceValue())
                 .build();
-
     }
 
 }
