@@ -20,7 +20,7 @@ mvn clean install
 | /prices?product={product_id}&brand={brand_name}&date={date} | GET  | Retrieves prices for a specific product and brand at a given date and time |
 #### Invoking the Price service:
 ```curl
-curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020-06-16 21:00:00'
+curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020-06-16%2021:00:00'
 ```
 
 <br>
