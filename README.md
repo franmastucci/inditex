@@ -28,7 +28,7 @@ curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020
 
 ### ER Diagram
 
-![](./images/prices_model.png)
+![](etc/images/prices_model.png)
 
 <br>
 

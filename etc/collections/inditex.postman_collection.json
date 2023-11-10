@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "2272ca00-5be8-4760-b512-e1c5af7d58d9",
+		"name": "inditex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29657299"
+	},
+	"item": [
+		{
+			"name": "Get Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prices?product=35455&brand=ZARA&date=2020-06-14 10:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "35455"
+						},
+						{
+							"key": "brand",
+							"value": "ZARA"
+						},
+						{
+							"key": "date",
+							"value": "2020-06-14 10:00:00",
+							"description": "Test 1"
+						},
+						{
+							"key": "date",
+							"value": "2020-06-14 16:00:00",
+							"description": "Test 2",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2020-06-14 21:00:00",
+							"description": "Test 3",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2020-06-15 10:00:00",
+							"description": "Test 4",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2020-06-16 21:00:00",
+							"description": "Test 5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
