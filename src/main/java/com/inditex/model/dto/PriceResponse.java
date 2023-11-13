@@ -1,10 +1,6 @@
 package com.inditex.model.dto;
 
-
-import com.inditex.model.entity.Brand;
-import com.inditex.model.entity.Currency;
 import com.inditex.model.entity.Price;
-import com.inditex.model.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
