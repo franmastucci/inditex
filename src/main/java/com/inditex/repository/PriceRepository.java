@@ -23,17 +23,14 @@ public interface PriceRepository extends JpaRepository<Price, Integer> {
      * @return An {@link Optional} containing the {@link Price} entity with the highest priority,
      *         or an empty container if no entity is found that meets the criteria.
      */
-    @Query("SELECT p FROM Price p " +
-            "JOIN p.brand b " +
-            "WHERE b.name = :brandName " +
-            "AND p.product.productId = :productId " +
-            "AND p.startDate <= :appDate " +
-            "AND p.endDate >= :appDate " +
-            "AND p.priority = (SELECT MAX(p2.priority) FROM Price p2 " +
-                            "WHERE p2.brand.brandId = b.brandId " +
-                            "AND p2.product.productId = :productId " +
-                            "AND p2.startDate <= :appDate " +
-                            "AND p2.endDate >= :appDate)")
+    @Query(value = "SELECT * FROM PRICES P " +
+            "JOIN BRANDS B ON B.BRAND_ID = P.BRAND_ID " +
+            "WHERE B.NAME = :brandName " +
+            "AND P.PRODUCT_ID = :productId " +
+            "AND P.START_DATE <= :appDate " +
+            "AND P.END_DATE >= :appDate " +
+            "ORDER BY P.PRIORITY DESC " +
+            "LIMIT 1", nativeQuery = true)
     Optional<Price> findMaxPriorityPrice(
             @Param("brandName") String brandName,
             @Param("productId") Long productId,
