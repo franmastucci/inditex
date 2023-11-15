@@ -59,7 +59,7 @@ The exception layer centralizes the management of exceptional situations in the 
 
 <br>
 
-### API Quickstart
+## API Quickstart
 
 ```bash
 mvn clean install
@@ -67,7 +67,7 @@ mvn spring-boot:run
 ```
 <br>
 
-### Running Integration Tests
+## Running Integration Tests
 #### ⚠ Warning: Docker is required for the execution of integration tests via Testcontainers.
 
 ```bash
@@ -76,7 +76,7 @@ mvn test
 <br>
 
 
-### API Endpoints
+## API Endpoints
 | Path                                                        | Type | Description                                                 |
 |:------------------------------------------------------------|:-----|:------------------------------------------------------------|
 | /prices?product={product_id}&brand={brand_name}&date={date} | GET  | Retrieves prices for a specific product and brand at a given date and time |
@@ -88,13 +88,13 @@ curl --location 'http://localhost:8080/prices?product=35455&brand=ZARA&date=2020
 <br>
 
 
-### ER Diagram
+## ER Diagram
 
 ![](etc/images/prices_model.png)
 
 <br>
 
-### Technology
+## Technology
 * **Platform:** Java 11
 * **Project type:** Microservice
 * **Spring Boot version:** 2.7.5
