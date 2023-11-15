@@ -38,6 +38,7 @@ The modular design enables flexibility, allowing changes to be made within a lay
 Each layer can be tested independently, enabling more straightforward unit testing and validation of the microservice's functionality.
 <br><br> *By adopting a layered architecture, we aim to leverage these advantages to efficiently meet the microservice's requirements while maintaining a balance between simplicity and functionality.*
 <br>
+<br>
 
 ## Layers Overview
 
