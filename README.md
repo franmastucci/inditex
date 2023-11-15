@@ -62,6 +62,7 @@ The exception layer centralizes the management of exceptional situations in the 
 
 ```bash
 mvn clean install
+mvn spring-boot:run
 ```
 <br>
 
